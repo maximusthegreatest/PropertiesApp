@@ -10,4 +10,9 @@ User Login: bob@gmail.com password: password
 Admin Login: testAdmin@bluetangerine.com password: password
 
 
-Kevin: Make sure to run php artisan db:seed 
+Install Steps: 
+1. Add properties db
+2. Composer Install
+3. php artisan migrate
+4. php artisan db:seed
+
