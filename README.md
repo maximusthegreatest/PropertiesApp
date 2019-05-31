@@ -9,3 +9,5 @@ Admin can create, edit, delete properties.Guest can view properties. User can vi
 User Login: bob@gmail.com password: password
 Admin Login: testAdmin@bluetangerine.com password: password
 
+
+Kevin: Make sure to run php artisan db:seed 
