@@ -23,9 +23,14 @@ class DatabaseSeeder extends Seeder
         $admin = factory('App\User')->create(['name' => 'bob', 'email' => 'bob@gmail.com']);
         $admin->assignRole('user');
 
+        $properties = array();
+        $seedImgs = array('seedImage1.jpg', 'seedImage2.jpg', 'seedImage3.jpg');
 
+        for($i = 0; $i < 3; $i++) {
+            array_push($properties, factory('App\Property')->create(['admin_id' => $admin->id, 'photo' => $seedImgs[$i]]));
+        }
 
-        $properties = factory('App\Property', 3)->create(['admin_id' => $admin->id]);
+        //$properties = factory('App\Property', 3)->create(['admin_id' => $admin->id]);
 
         foreach ($properties as $property) {
          factory('App\Comment')->create(['property_id' => $property->id]);

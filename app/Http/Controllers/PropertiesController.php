@@ -56,7 +56,7 @@ class PropertiesController extends Controller
                 'name' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
                 'description' => 'required',
                 'available_on' => 'required|date',
-                'rating' => 'required|between:1,5',
+                'rating' => 'required|integer|between:1,5',
                 'price' => 'required|numeric',
                 'country' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
                 'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -129,13 +129,13 @@ class PropertiesController extends Controller
     {
 
         if (auth()->user()->hasRole('admin')) {
-
             $property = Property::findOrFail($id);
+
             $attributes = $request->validate([
                 'name' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
                 'description' => 'required',
                 'available_on' => 'required|date',
-                'rating' => 'required|between:1,5',
+                'rating' => 'required|integer|between:1,5',
                 'price' => 'required|numeric',
                 'country' => 'required|max:255|regex:/^[\pL\s\-]+$/u',
             ]);

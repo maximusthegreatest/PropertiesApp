@@ -7,10 +7,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Property::class, function (Faker $faker) {
     $name = $faker->name;
-//    $seedImgs = array('seedImage1', 'seedImage2', 'seedImage3');
+//    $seedImgs = array('seedImage1.jpg', 'seedImage2.jpg', 'seedImage3.jpg');
 //    $randPos = array_rand($seedImgs, 1);
 //    $randomImg = $seedImgs[$randPos];
-    //$faker->image('public/images',600,400, null, false, true, 'house')
+
 
     return [
         'admin_id' => function () {
@@ -23,6 +23,6 @@ $factory->define(Property::class, function (Faker $faker) {
         'slug' => str_slug($name, '-'),
         'price' => $faker->numberBetween(100000, 500000),
         'country' => $faker->country,
-        'photo' => $faker->imageUrl()
+        'photo' => $faker->image()
     ];
 });

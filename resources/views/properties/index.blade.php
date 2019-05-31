@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @role('admin')
+    <div>
+        <a href="/properties/create"><div class="btn btn-primary">Create property</div></a>
+    </div>
+    @endrole
     @foreach ($properties as $property)
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-6">
